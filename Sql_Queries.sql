@@ -74,7 +74,7 @@ select ugc_id,
 year,
 quarter,
 current_qtr,
-lead(current_qtr) over (partition by ugc_id order by a.year,a.quarter) as next_qtr
+lead(current_qtr) over (partition by ugc_id order by year,quarter) as next_qtr
 from
 qtr_customer)
 /* sub query finds the next quarter a customer has transacted in.
